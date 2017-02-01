@@ -7,6 +7,8 @@ import json
 GPIO.setmode(GPIO.BCM) 
 GPIO.setwarnings(False)
 
+
+
 def write(what,where):
 	file=open(where, "w+");
 	file.write(what);
@@ -44,5 +46,5 @@ class TemperatureSensor:
 		return candidate;
 
 sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
-temperaturen = sensor.getTemperature("heihei.out");
-write(json.dumps(temperaturen, default=lambda o: o.__dict__), "../temperatureSensor.json");
+#temperaturen = sensor.getTemperature("heihei.out");
+#write(json.dumps(temperaturen, default=lambda o: o.__dict__), "../temperatureSensor.json");
