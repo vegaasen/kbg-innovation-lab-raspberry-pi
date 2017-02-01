@@ -1,3 +1,7 @@
+#Usage:
+# sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
+# temperature = sensor.getTemperature();
+
 from time import sleep
 from RPi import GPIO
 import os
@@ -51,7 +55,3 @@ class TemperatureSensor:
 			return NOT_FOUND;
 		else:
 			return candidate.temperature;
-
-#sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
-#temperaturen = sensor.getTemperature();
-#write(json.dumps(temperaturen, default=lambda o: o.__dict__), "../temperatureSensor.json");
