@@ -1,17 +1,12 @@
 from time import sleep
 from RPi import GPIO
 import os
-import Adafruit_DHT
 import json
 
-GPIO.setmode(GPIO.BCM) 
+GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-def write(what,where):
-	file=open(where, "w+");
-	file.write(what);
-	file.close();
-	print (what + " written to " + where);
+NOT_FOUND = -1;
 
 class Temperature:
 
@@ -32,7 +27,7 @@ class TemperatureSensor:
 	def __str__(this):
 		return "hei object";
 
-	def getTemperature(this, logLocation):
+	def getTemperatureHumidity(this):
 		print (this);
 		humidity,temperature = Adafruit_DHT.read_retry(this.sensorType,this.pinLocation);
 		candidate = Temperature(0, 0);
@@ -43,6 +38,20 @@ class TemperatureSensor:
 		print ("Temp={0:0.1f}*C Humidity={1:0.1f}%".format(temperature,humidity))
 		return candidate;
 
-sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
-temperaturen = sensor.getTemperature("heihei.out");
-write(json.dumps(temperaturen, default=lambda o: o.__dict__), "../temperatureSensor.json");
+	def getHumidity(this):
+		candidate = getTemperature();
+		if candidate.humidity = 0:
+			return NOT_FOUND;
+		else:
+			return candidate.humidity;
+
+	def getTemperature(this):
+		candidate = getTemperature();
+		if candidate.temperature = 0:
+			return NOT_FOUND;
+		else:
+			return candidate.temperature;
+
+#sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
+#temperaturen = sensor.getTemperature();
+#write(json.dumps(temperaturen, default=lambda o: o.__dict__), "../temperatureSensor.json");
