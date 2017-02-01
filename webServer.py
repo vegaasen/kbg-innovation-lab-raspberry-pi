@@ -1,6 +1,6 @@
 from flask import Flask
 import sys
-import Adafruit_DHT
+#import Adafruit_DHT
 import json
 from Components.temperature.tempHumidity import TemperatureSensor
 app = Flask(__name__)

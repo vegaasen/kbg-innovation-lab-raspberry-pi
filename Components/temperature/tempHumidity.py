@@ -1,7 +1,7 @@
 from time import sleep
 from RPi import GPIO
 import os
-import Adafruit_DHT
+#import Adafruit_DHT
 import json
 
 GPIO.setmode(GPIO.BCM) 
@@ -45,6 +45,6 @@ class TemperatureSensor:
 		print ("Temp={0:0.1f}*C Humidity={1:0.1f}%".format(temperature,humidity))
 		return candidate;
 
-sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
+#sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");
 #temperaturen = sensor.getTemperature("heihei.out");
 #write(json.dumps(temperaturen, default=lambda o: o.__dict__), "../temperatureSensor.json");
