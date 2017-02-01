@@ -43,15 +43,15 @@ class TemperatureSensor:
 		return candidate;
 
 	def getHumidity(this):
-		candidate = getTemperature();
-		if candidate.humidity = 0:
+		candidate = getTemperatureHumidity();
+		if candidate.humidity == 0:
 			return NOT_FOUND;
 		else:
 			return candidate.humidity;
 
 	def getTemperature(this):
-		candidate = getTemperature();
-		if candidate.temperature = 0:
+		candidate = getTemperatureHumidity();
+		if candidate.temperature == 0:
 			return NOT_FOUND;
 		else:
 			return candidate.temperature;

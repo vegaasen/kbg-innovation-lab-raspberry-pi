@@ -11,15 +11,17 @@ class Blink:
 
 	def __init__(this, pinLocation):
 		this.pinLocation = pinLocation;
-		print ("Defined Blink with sensorType: {%s}, pinLocation {%s}" % (sensorType, pinLocation));
+		print ("Defined Blink with pinLocation {%s}" % (pinLocation));
 
 	def __str__(this):
-		return "Blink sensorType {%s}, pinLocation {%s}" % (sensorType, pinLocation);
+		return "Blink pinLocation {%s}" % (pinLocation);
 
 	def blink(this, delay=0):
 		print ("Blinking with {%s} as the defined delay" % (delay));
+		GPIO.setup(this.pinLocation,GPIO.OUT)
 		GPIO.output(this.pinLocation, GPIO.HIGH);
 		time.sleep(delay);
 		GPIO.output(this.pinLocation, GPIO.LOW);
 		GPIO.cleanup();
 		print ("Blinking finished :-)");
+

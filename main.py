@@ -4,6 +4,7 @@ import json
 
 #List of Components
 from Components.temperature.temperature import TemperatureSensor
+from Components.led.blink import Blink
 
 
 app = Flask(__name__)
@@ -13,6 +14,12 @@ def root():
     welcomePageFile = open("web.html",'r')
     welcomePage = welcomePageFile.read()
     return welcomePage
+
+@app.route("/sensor/led/blink/<float:delay>")
+def ledBlink(delay):
+    sensor = Blink(26);
+    blinky = sensor.blink(delay);
+    return "blinking in %s" % delay
 	
 @app.route("/sensor/temperature/degree")
 def degree():
