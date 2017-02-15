@@ -6,7 +6,6 @@ import json
 from Components.temperature.temperature import TemperatureSensor
 from Components.led.blink import Blink
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -20,7 +19,7 @@ def ledBlink(delay):
     sensor = Blink(26);
     blinky = sensor.blink(delay);
     return "blinking in %s" % delay
-	
+
 @app.route("/sensor/temperature/degree")
 def degree():
     sensor = TemperatureSensor(Adafruit_DHT.DHT11, "26");

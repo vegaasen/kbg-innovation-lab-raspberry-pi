@@ -3,3 +3,7 @@
 
 # ignore generated files
 *.json
+
+# Project stuff
+*.sln
+*.csproj
