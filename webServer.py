@@ -3,7 +3,7 @@ import Adafruit_DHT #Can this be removed?
 import json
 
 #List of Components
-from Components.temperature.temperature import TemperatureSensor
+from Components.temperature.DHT11 import TemperatureSensor
 
 
 app = Flask(__name__)
