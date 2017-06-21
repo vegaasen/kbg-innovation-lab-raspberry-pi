@@ -2,7 +2,7 @@
 *.pyc
 
 # ignore generated files
-*.json
+#*.json
 
 # Project stuff
 *.sln

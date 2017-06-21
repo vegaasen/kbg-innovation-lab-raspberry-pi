@@ -1,0 +1,18 @@
+{
+  "transport": "scp",
+  "uploadOnSave": false,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "192.168.191.40",
+  "port": "22",
+  "target": "/home/pi/develop/kbg-innovation-lab-raspberry-pi",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "pi",
+  "password": "raspberry",
+  "watch": [
+    "/"
+  ]
+}
