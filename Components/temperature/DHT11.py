@@ -4,6 +4,7 @@
 
 from time import sleep
 from RPi import GPIO
+import Adafruit_DHT
 import os
 import json
 
@@ -32,25 +33,24 @@ class TemperatureSensor:
 		return "hei object";
 
 	def getTemperatureHumidity(this):
-		print (this);
 		humidity,temperature = Adafruit_DHT.read_retry(this.sensorType,this.pinLocation);
 		candidate = Temperature(0, 0);
 		if humidity is not None:
 			candidate.humidity = humidity;
 		if temperature is not None:
 			candidate.temperature = temperature;
-		print ("Temp={0:0.1f}*C Humidity={1:0.1f}%".format(temperature,humidity))
+		print ("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature,humidity))
 		return candidate;
 
 	def getHumidity(this):
-		candidate = getTemperatureHumidity();
+		candidate = this.getTemperatureHumidity();
 		if candidate.humidity == 0:
 			return NOT_FOUND;
 		else:
 			return candidate.humidity;
 
 	def getTemperature(this):
-		candidate = getTemperatureHumidity();
+		candidate = this.getTemperatureHumidity();
 		if candidate.temperature == 0:
 			return NOT_FOUND;
 		else:

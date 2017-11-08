@@ -3,7 +3,7 @@
   "uploadOnSave": false,
   "useAtomicWrites": false,
   "deleteLocal": false,
-  "hostname": "192.168.191.40",
+  "hostname": "192.168.0.110",
   "port": "22",
   "target": "/home/pi/develop/kbg-innovation-lab-raspberry-pi",
   "ignore": [
@@ -11,7 +11,7 @@
     ".git/**"
   ],
   "username": "pi",
-  "password": "raspberry",
+  "password": "Golf2007",
   "watch": [
     "/"
   ]

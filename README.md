@@ -7,5 +7,4 @@ sudo pip install Adafruit_Python_DHT
 
 # Configuring automatically sync (Atom)
 
-hei
-heisa
+(testarea)

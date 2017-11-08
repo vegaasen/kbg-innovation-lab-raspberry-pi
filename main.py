@@ -3,7 +3,7 @@ import Adafruit_DHT #Can this be removed?
 import json
 
 #List of Components
-from Components.temperature.temperature import TemperatureSensor
+from Components.temperature.DHT11 import TemperatureSensor
 from Components.led.blink import Blink
 
 app = Flask(__name__)
@@ -33,4 +33,4 @@ def humidity():
     return json.dumps(temperaturen, default=lambda o: o.__dict__)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
